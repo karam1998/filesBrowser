@@ -19,8 +19,14 @@ try {
 
                 row[0] = folder_files[i].getName();
 
-                model.addRow(row);} 
+                model.addRow(row);
+                } 
 
 //            if  index.isDirectory() {
 //                jTableFilesName.setModel(new DefaultTableModel())
             }
+                        catch(Exception e){
+            e.printStackTrace();
+               
+        }
+    }
