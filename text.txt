@@ -1,0 +1,26 @@
+try {
+            File file = new File("C:\\Users\\Kefah Aied\\Desktop\\files");
+
+            String folder = jTableFilesName.getValueAt(jTableFilesName.getSelectedRow(), 0).toString();
+            String xx = "C:\\Users\\Kefah Aied\\Desktop\\files\\" + folder;
+            File dd = new File(xx);
+            File[] folder_files = dd.listFiles();
+
+            DefaultTableModel model = (DefaultTableModel) jTableFilesName.getModel();
+            while (model.getRowCount() > 0) {
+                model.removeRow(0);
+            }
+
+            model.setColumnIdentifiers(new String[]{folder});
+
+            Object[] row = new Object[1];
+
+            for (int i = 0; i < folder_files.length; i++) {
+
+                row[0] = folder_files[i].getName();
+
+                model.addRow(row);} 
+
+//            if  index.isDirectory() {
+//                jTableFilesName.setModel(new DefaultTableModel())
+            }
